@@ -141,3 +141,20 @@ Then each update it moves the sprite horizontally by 1 pixel, and draws it to th
 
         pygame.display.flip()
 ```
+
+## Loading and Playing Sounds
+This example builds from the previous example, loading in a sound effect that plays when the
+example sprite hits the right hand side of the screen. The sprite will then also be moved back
+to the left side of the screen again.
+
+```python
+    def LoadSprites(self):
+        # ... at the end of the function ...
+        self.example_sound = pygame.mixer.Sound("sounds/example.wav")
+
+    def UpdateFrame(self):
+        # ... at the end of the function
+        if self.example_sprite.right >= self.width:
+            self.example_sound.play()
+            self.example_sprite.left = 0
+```
