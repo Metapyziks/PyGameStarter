@@ -1,4 +1,4 @@
-# PyGameStarter
+# Resources
 ## Version Control
 You'll use this to download (pull) your code from GitHub, or send changes you make (push)
 back to the cloud as a backup and so you can work on your project elsewhere. Pick one:
@@ -54,3 +54,62 @@ Documentation: https://github.com/bitcraft/PyTMX#documentation
 Used to create tile-based levels for your game.
 
 * Download: http://www.mapeditor.org/
+
+# Examples
+## Basic Game Outline
+This example will open a 1280 by 720 window, clear the screen with a blue background every frame,
+and run at a fixed update rate of 60 times a second.
+
+```python
+import os, sys
+import pygame
+
+from pygame.locals import *
+
+class ExampleGame:
+    def __init__(self, width=1280, height=720, frame_rate=60):
+        pygame.init()
+        pygame.display.set_caption("My Example Game!")
+
+        self.width = width
+        self.height = height
+
+        self.frame_rate = frame_rate
+
+        self.background_color = (100, 149, 237)
+
+        self.clock = pygame.time.Clock()
+        self.screen = pygame.display.set_mode((self.width, self.height))
+
+    def Run(self):
+        self.LoadSprites()
+        self.MainLoop()
+
+    def LoadSprites(self):
+        # Load sprites and sounds
+        return
+
+    def UpdateFrame(self):        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: 
+                sys.exit()
+
+        # Move things around and listen to input here
+
+    def RenderFrame(self):
+        self.screen.fill(self.background_color)
+
+        # Draw sprites and text here
+
+        pygame.display.flip()
+
+    def MainLoop(self):
+        while 1:
+            self.UpdateFrame()
+            self.RenderFrame()
+            self.clock.tick(60)
+
+if __name__ == "__main__":
+    MainWindow = ExampleGame()
+    MainWindow.Run()
+```
