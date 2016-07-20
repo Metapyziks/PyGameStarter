@@ -115,14 +115,16 @@ if __name__ == "__main__":
 ```
 
 ## Loading and Drawing Sprites
+This example adds functionality to the functions defined in the previous example, and will load
+an image at "images/example.png" and convert it to a format that pygame knows has transparency.
+Then each update it moves the sprite horizontally by 1 pixel, and draws it to the screen.
 
 ```python
-...
     def LoadSprites(self):
         # Load sprites and sounds
         self.example_sprite = pygame.image.load('images/example.png').convert_alpha()
         self.example_sprite_rect = self.example_sprite.get_rect()
-...
+
     def UpdateFrame(self):        
         for event in pygame.event.get():
             if event.type == pygame.QUIT: 
@@ -130,7 +132,7 @@ if __name__ == "__main__":
 
         # Move things around and listen to input here
         self.example_sprite_rect.move_ip(1, 0)
-...
+
     def RenderFrame(self):
         self.screen.fill(self.background_color)
 
@@ -138,5 +140,4 @@ if __name__ == "__main__":
         self.screen.blit(self.example_sprite, self.example_sprite_rect)
 
         pygame.display.flip()
-...
 ```
