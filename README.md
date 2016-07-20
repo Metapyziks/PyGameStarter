@@ -153,8 +153,8 @@ to the left side of the screen again.
         self.example_sound = pygame.mixer.Sound("sounds/example.wav")
 
     def UpdateFrame(self):
-        # ... at the end of the function
-        if self.example_sprite.right >= self.width:
+        # ... at the end of the function ...
+        if self.example_sprite_rect.right >= self.width:
             self.example_sound.play()
-            self.example_sprite.left = 0
+            self.example_sprite_rect.left = 0
 ```
