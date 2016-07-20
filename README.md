@@ -38,7 +38,9 @@ Download: https://www.python.org/downloads/
 Make sure you get a version for Python 2.7
 
 Download: http://www.pygame.org/download.shtml
+
 Documentation: http://www.pygame.org/docs/
+
 Cheatsheet: http://www.cogsci.rpi.edu/~destem/gamedev/pygame.pdf
 
 ### PyTmx
